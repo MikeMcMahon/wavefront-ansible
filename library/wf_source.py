@@ -21,18 +21,18 @@ EXAMPLES = '''
 
 # Create/update a source with the specified tags/description
 wf_source:
-    token: your-api-token
-    endpoint: https://yourCluster.wavefront.com
-    source: some-wf-source
+    token: WAVEFRONT_TOKEN
+    endpoint: https://WAVEFRONT_CLUSTER.wavefront.com
+    source: SOURCE_NAME_IN_WAVEFRONT
     description: "primary app server for try cluster"
     tags:
         - prod
 
 # Hide a source
 wf_source:
-    token: your-api-token
-    endpoint: https://yourCluster.wavefront.com
-    source: some-wf-source
+    token: WAVEFRONT_TOKEN
+    endpoint: https://WAVEFRONT_CLUSTER.wavefront.com
+    source: SOURCE_NAME_IN_WAVEFRONT
     hidden: True
 
     # If tags or description are specified they will update the source
@@ -206,7 +206,7 @@ def update_source(module, source, tags, description, token, endpoint, hidden=Fal
 def main():
     module = AnsibleModule(argument_spec=dict(
         token=dict(required=True, default=None),
-        endpoint=dict(default='https://mon.wavefront.com'),
+        endpoint=dict(default='https://WAVEFRONT_CLUSTER.wavefront.com'),
         source=dict(required=True, default=None),
         hidden=dict(default=False, type='bool'),
         description=dict(default=''),
