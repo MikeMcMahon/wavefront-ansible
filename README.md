@@ -60,7 +60,7 @@ wf_source_tags:
 wf_source_tags:
     token: your-api-token
     endpoint: https://yourCluster.wavefront.com
-    source: try-2a-app15-i-0a04798b7fef872c9
+    source: some-wf-source
     state: present
     tags:
         - retired
