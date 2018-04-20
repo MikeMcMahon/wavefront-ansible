@@ -24,17 +24,17 @@ EXAMPLES = '''
 
 # Remove the prod tag from a source
 wf_source_tags:
-    token: your-api-token
-    endpoint: hhttps://yourCluster.wavefront.com
-    source: some-wf-source
+    token: WAVEFRONT_TOKEN
+    endpoint: hhttps://WAVEFRONT_CLUSTER.wavefront.com
+    source: SOURCE_NAME_IN_WAVEFRONT
     state: absent
     tags:
         - prod
 
 # Add retired tag to a source
 wf_source_tags:
-    token: your-api-token
-    endpoint: https://yourCluster.wavefront.com
+    token: WAVEFRONT_TOKEN
+    endpoint: https://WAVEFRONT_CLUSTER.wavefront.com
     source: try-2a-app15-i-0a04798b7fef872c9
     state: present
     tags:
@@ -42,9 +42,9 @@ wf_source_tags:
 
 # Get all tags for a source
 wf_source_tags:
-    token: your-api-token
-    endpoint: https://yourCluster.wavefront.com
-    source: some-wf-source
+    token: WAVEFRONT_TOKEN
+    endpoint: https://WAVEFRONT_CLUSTER.wavefront.com
+    source: SOURCE_NAME_IN_WAVEFRONT
 register: source_tags
 
 debug:
@@ -52,9 +52,9 @@ debug:
 
 # Replace tags for a given source with new tags
 wf_source_tags:
-    token: your-api-token
-    endpoint: https://yourCluster.wavefront.com
-    source: some-wf-source
+    token: WAVEFRONT_TOKEN
+    endpoint: https://WAVEFRONT_CLUSTER.wavefront.com
+    source: SOURCE_NAME_IN_WAVEFRONT
     state: replace
     tags:
         - prod

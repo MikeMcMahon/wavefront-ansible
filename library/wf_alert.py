@@ -20,9 +20,9 @@ EXAMPLES = '''
 
 # Read the output of an alert as it is in WF
 wf_alert:
-    token: your-api-token
-    endpoint: https://yourCluster.wavefront.com
-    alert_id: some-alert-id
+    token: WAVEFRONT_TOKEN
+    endpoint: https://WAVEFRONT_CLUSTER.wavefront.com
+    alert_id: ALERT_ID_IN_WAVEFRONT
 '''
 
 WF_ALERT_API = "/api/v2/alert/{}"
@@ -96,7 +96,7 @@ def get_alert(ansible_module, token, endpoint, alert_id):
 def main():
     ansible_module = AnsibleModule(argument_spec=dict(
         token=dict(required=True, default=None),
-        endpoint=dict(default='https://mon.wavefront.com'),
+        endpoint=dict(default='https://WAVEFRONT_CLUSTER.wavefront.com'),
         alert_id=dict(required=True, default=None),
     ))
 

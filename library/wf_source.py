@@ -21,18 +21,18 @@ EXAMPLES = '''
 
 # Create/update a source with the specified tags/description
 wf_source:
-    token: your-api-token
-    endpoint: https://yourCluster.wavefront.com
-    source: some-wf-source
+    token: WAVEFRONT_TOKEN
+    endpoint: https://WAVEFRONT_CLUSTER.wavefront.com
+    source: SOURCE_NAME_IN_WAVEFRONT
     description: "primary app server for try cluster"
     tags:
         - prod
 
 # Hide a source
 wf_source:
-    token: your-api-token
-    endpoint: https://yourCluster.wavefront.com
-    source: some-wf-source
+    token: WAVEFRONT_TOKEN
+    endpoint: https://WAVEFRONT_CLUSTER.wavefront.com
+    source: SOURCE_NAME_IN_WAVEFRONT
     hidden: True
 
     # If tags or description are specified they will update the source

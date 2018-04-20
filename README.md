@@ -12,9 +12,9 @@ Enables interfacing with reading wf alerts
 ```
 # Read the output of an alert as it is in WF
 wf_alert:
-    token: your-api-token
-    endpoint: https://yourCluster.wavefront.com
-    alert_id: some-alert-id
+    token: WAVEFRONT_TOKEN
+    endpoint: https://WAVEFRONT_CLUSTER.wavefront.com
+    alert_id: ALERT_ID_IN_WAVEFRONT
 ```
 
 ### wf_source
@@ -24,18 +24,18 @@ Enables interfacing with the Wavefront API to create a source and tags
 ```
 # Create/update a source with the specified tags/description
 wf_source:
-    token: your-api-token
-    endpoint: https://yourCluster.wavefront.com
-    source: some-wf-source
+    token: WAVEFRONT_TOKEN
+    endpoint: https://WAVEFRONT_CLUSTER.wavefront.com
+    source: SOURCE_NAME_IN_WAVEFRONT
     description: "primary app server for try cluster"
     tags:
         - prod
 
 # Hide a source
 wf_source:
-    token: your-api-token
-    endpoint: https://yourCluster.wavefront.com
-    source: some-wf-source
+    token: WAVEFRONT_TOKEN
+    endpoint: https://WAVEFRONT_CLUSTER.wavefront.com
+    source: SOURCE_NAME_IN_WAVEFRONT
     hidden: True
 
     # If tags or description are specified they will update the source
@@ -49,27 +49,27 @@ Enables interfacing with the Wavefront API to configure source tags
 ```
 # Remove the prod tag from a source
 wf_source_tags:
-    token: your-api-token
-    endpoint: hhttps://yourCluster.wavefront.com
-    source: some-wf-source
+    token: WAVEFRONT_TOKEN
+    endpoint: https://WAVEFRONT_CLUSTER.wavefront.com
+    source: SOURCE_NAME_IN_WAVEFRONT
     state: absent
     tags:
         - prod
 
 # Add retired tag to a source
 wf_source_tags:
-    token: your-api-token
-    endpoint: https://yourCluster.wavefront.com
-    source: try-2a-app15-i-0a04798b7fef872c9
+    token: WAVEFRONT_TOKEN
+    endpoint: https://WAVEFRONT_CLUSTER.wavefront.com
+    source: SOURCE_NAME_IN_WAVEFRONT
     state: present
     tags:
         - retired
 
 # Get all tags for a source
 wf_source_tags:
-    token: your-api-token
-    endpoint: https://yourCluster.wavefront.com
-    source: some-wf-source
+    token: WAVEFRONT_TOKEN
+    endpoint: https://WAVEFRONT_CLUSTER.wavefront.com
+    source: SOURCE_NAME_IN_WAVEFRONT
 register: source_tags
 
 debug:
@@ -77,9 +77,9 @@ debug:
 
 # Replace tags for a given source with new tags
 wf_source_tags:
-    token: your-api-token
-    endpoint: https://yourCluster.wavefront.com
-    source: some-wf-source
+    token: WAVEFRONT_TOKEN
+    endpoint: https://WAVEFRONT_CLUSTER.wavefront.com
+    source: SOURCE_NAME_IN_WAVEFRONT
     state: replace
     tags:
         - prod
