@@ -207,7 +207,7 @@ def delete_tag(module, source, tag_value, token, endpoint):
 def main():
     module = AnsibleModule(argument_spec=dict(
         token=dict(required=True, default=None),
-        endpoint=dict(default='https://WAVEFRONT_CLUSTER.wavefront.com'),
+        endpoint=dict(default=None),
         source=dict(required=True, default=None),
         state=dict(default=None, choices=['absent', 'present', 'replace']),
         tags=dict(default=None, type='list')
