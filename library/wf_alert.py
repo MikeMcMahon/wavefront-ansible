@@ -96,7 +96,7 @@ def get_alert(ansible_module, token, endpoint, alert_id):
 def main():
     ansible_module = AnsibleModule(argument_spec=dict(
         token=dict(required=True, default=None),
-        endpoint=dict(default='https://WAVEFRONT_CLUSTER.wavefront.com'),
+        endpoint=dict(default=None),
         alert_id=dict(required=True, default=None),
     ))
 
